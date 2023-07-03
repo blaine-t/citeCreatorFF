@@ -1,9 +1,4 @@
 {
-   "background": {
-      "scripts": [
-         "js/background.js"
-      ]
-   },
    "browser_action": {
       "default_icon": {
          "16": "img/16.png",
@@ -14,7 +9,7 @@
          "256": "img/256.png"
       },
       "default_popup": "html/popup.html",
-      "default_title": "Cite Creator"
+      "default_title": "Modern Cite Creator"
    },
    "content_scripts": [
       {
@@ -22,7 +17,16 @@
             "css/cite.css"
          ],
          "exclude_matches": [
-            "*://*.google.com/*"
+            "*://*.google.com/*",
+            "*://*.bing.com/*",
+            "*://*.duckduckgo.com/*",
+            "*://*.yahoo.com/*",
+            "*://*.ask.com/*",
+            "*://*.aol.com/*",
+            "*://*.yandex.com/*",
+            "*://*.baidu.com/*",
+            "*://*.naver.com/*",
+            "*://*.ecosia.com/*"
          ],
          "js": [
             "js/date.js",
@@ -44,7 +48,7 @@
       "256": "img/256.png"
    },
    "manifest_version": 2,
-   "name": "Cite Creator",
+   "name": "Modern Cite Creator",
    "options_ui": {
       "page": "html/options.html"
    },
@@ -57,5 +61,5 @@
          "id": "citeCreator@bathost.net"
       }
    },
-   "version": "1.1.3"
+   "version": "1.2.0"
 }

@@ -3,11 +3,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	chrome.storage.sync.get(null, function (settings) {
 		if (settings.enabled == 0) {
 			document.getElementById('cm_myonoffswitch').checked = false;
-			console.log('Cite Creator disabled');
+			console.log('Modern Cite Creator disabled');
 		}
 		else {
 			document.getElementById('cm_myonoffswitch').checked = true;
-			console.log('Cite Creator enabled');
+			console.log('Modern Cite Creator enabled');
 		}
 
 		if (settings.copyselected == 1) {
@@ -84,12 +84,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function onOffHandler() {
 	if (document.getElementById('cm_myonoffswitch').checked) {
 		chrome.storage.sync.set({ 'enabled': 1 }, function () {
-			console.log('Cite Creator enabled');
+			console.log('Modern Cite Creator enabled');
 		});
 	}
 	else {
 		chrome.storage.sync.set({ 'enabled': 0 }, function () {
-			console.log('Cite Creator disabled');
+			console.log('Modern Cite Creator disabled');
 		});
 	}
 }

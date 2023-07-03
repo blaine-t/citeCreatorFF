@@ -1,6 +1,6 @@
-# Cite Creator Firefox
+# Modern Cite Creator
 
-This is my porting of the extension [Cite Creator](https://chrome.google.com/webstore/detail/cite-creator/jampigcbgngjedogaoglhpeckidccodi) to Firefox. I've always wanted to use the extension in Firefox so I finally decided to port it. I plan on building a 2.0 version with improved features but for now I have feature parity with Cite Creator Chrome.
+This is my updating and porting of the extension [Cite Creator](https://chrome.google.com/webstore/detail/cite-creator/jampigcbgngjedogaoglhpeckidccodi) to Firefox. I have also updated the code base from deprecated code to modern code since the extension was last released in 2016. It should now be written in a way that it is usable in any modern browser (until Chrome kills Manifest V2). Tested in Chrome 115 and Firefox 115
 
 ## Special Thanks To
 
