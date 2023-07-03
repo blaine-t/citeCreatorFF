@@ -53,7 +53,9 @@
       "storage"
    ],
    "browser_specific_settings": {
-      "gecko": {}
+      "gecko": {
+         "id": "citeCreator@bathost.net"
+      }
    },
-   "version": "1.1.1"
+   "version": "1.1.2"
 }
