@@ -34,7 +34,7 @@ var objSettings = new Object();
 setSettings(runComputeCite);
 
 function setSettings(callback) {
-	chrome.storage.local.get(null, function (settings) {
+	chrome.storage.sync.get(null, function (settings) {
 		objSettings.enabled = settings.enabled;
 		objSettings.copyselected = settings.copyselected;
 		objSettings.citeboxleft = settings.citeboxleft;

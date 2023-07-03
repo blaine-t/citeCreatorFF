@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-	chrome.storage.local.get(null, function (settings) {
+	chrome.storage.sync.get(null, function (settings) {
 		if (settings.enabled == 0) {
 			document.getElementById('cm_myonoffswitch').checked = false;
 			console.log('Cite Creator disabled');
@@ -83,12 +83,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function onOffHandler() {
 	if (document.getElementById('cm_myonoffswitch').checked) {
-		chrome.storage.local.set({ 'enabled': 1 }, function () {
+		chrome.storage.sync.set({ 'enabled': 1 }, function () {
 			console.log('Cite Creator enabled');
 		});
 	}
 	else {
-		chrome.storage.local.set({ 'enabled': 0 }, function () {
+		chrome.storage.sync.set({ 'enabled': 0 }, function () {
 			console.log('Cite Creator disabled');
 		});
 	}
@@ -96,12 +96,12 @@ function onOffHandler() {
 
 function copySelectedHandler() {
 	if (document.getElementById('copyselected').checked) {
-		chrome.storage.local.set({ 'copyselected': 1 }, function () {
+		chrome.storage.sync.set({ 'copyselected': 1 }, function () {
 			console.log('Copy Selected enabled');
 		});
 	}
 	else {
-		chrome.storage.local.set({ 'copyselected': 0 }, function () {
+		chrome.storage.sync.set({ 'copyselected': 0 }, function () {
 			console.log('Copy Selected disabled');
 		});
 	}
@@ -109,12 +109,12 @@ function copySelectedHandler() {
 
 function citeBoxLeftHandler() {
 	if (document.getElementById('citeboxleft').checked) {
-		chrome.storage.local.set({ 'citeboxleft': 1 }, function () {
+		chrome.storage.sync.set({ 'citeboxleft': 1 }, function () {
 			console.log('Cite Box Left enabled');
 		});
 	}
 	else {
-		chrome.storage.local.set({ 'citeboxleft': 0 }, function () {
+		chrome.storage.sync.set({ 'citeboxleft': 0 }, function () {
 			console.log('Cite Box Left disabled');
 		});
 	}
@@ -122,12 +122,12 @@ function citeBoxLeftHandler() {
 
 function suppressRatingHandler() {
 	if (document.getElementById('suppressrating').checked) {
-		chrome.storage.local.set({ 'suppressrating': 1 }, function () {
+		chrome.storage.sync.set({ 'suppressrating': 1 }, function () {
 			console.log('Suppress Rating enabled');
 		});
 	}
 	else {
-		chrome.storage.local.set({ 'suppressrating': 0 }, function () {
+		chrome.storage.sync.set({ 'suppressrating': 0 }, function () {
 			console.log('Suppress Rating disabled');
 		});
 	}
@@ -135,12 +135,12 @@ function suppressRatingHandler() {
 
 function largeFontHandler() {
 	if (document.getElementById('largefont').checked) {
-		chrome.storage.local.set({ 'largefont': 1 }, function () {
+		chrome.storage.sync.set({ 'largefont': 1 }, function () {
 			console.log('Large Font enabled');
 		});
 	}
 	else {
-		chrome.storage.local.set({ 'largefont': 0 }, function () {
+		chrome.storage.sync.set({ 'largefont': 0 }, function () {
 			console.log('Large Font disabled');
 		});
 	}
@@ -148,26 +148,26 @@ function largeFontHandler() {
 function citeFormatHandler() {
 	if (document.getElementById('citeformat_standard').checked == true) {
 		document.getElementById('customciteformat').disabled = true;
-		chrome.storage.local.set({ 'citeformat': 0 }, function () {
+		chrome.storage.sync.set({ 'citeformat': 0 }, function () {
 			console.log('Standard cite format');
 		});
 	}
 	else if (document.getElementById('citeformat_frontloaded').checked == true) {
 		document.getElementById('customciteformat').disabled = true;
-		chrome.storage.local.set({ 'citeformat': 1 }, function () {
+		chrome.storage.sync.set({ 'citeformat': 1 }, function () {
 			console.log('Frontloaded cite format');
 		});
 	}
 	else if (document.getElementById('citeformat_custom').checked == true) {
 		document.getElementById('customciteformat').disabled = false;
-		chrome.storage.local.set({ 'citeformat': 2 }, function () {
+		chrome.storage.sync.set({ 'citeformat': 2 }, function () {
 			console.log('Custom cite format');
 		});
 	}
 }
 
 function customCiteFormatHandler() {
-	chrome.storage.local.set({ 'customciteformat': document.getElementById('customciteformat').value }, function () {
+	chrome.storage.sync.set({ 'customciteformat': document.getElementById('customciteformat').value }, function () {
 		//console.log(document.getElementById('customciteformat').value);
 	});
 }
