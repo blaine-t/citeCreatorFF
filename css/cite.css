@@ -64,6 +64,7 @@ On/Off Switch
 .cm_onoffswitch {
     position: relative;
     width: 70px;
+    user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

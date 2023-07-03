@@ -119,7 +119,7 @@ function computeCite(strNewName, strNewQuals, strNewDate, strNewTitle, strNewPub
 	if (typeof strName == 'undefined') {
 		arrAuthors = document.getElementsByName("author"); //Try author
 		if (arrAuthors.length <= 0) { arrAuthors = document.getElementsByName("Author"); } //Try Author
-		if (arrAuthors.length <= 0) { arrAuthors = document.getElementsByName("sailthru.author"); } //Try sailtru.author
+		if (arrAuthors.length <= 0) { arrAuthors = document.getElementsByName("sailthru.author"); } //Try sailthru.author
 		if (arrAuthors.length <= 0) { arrAuthors = document.getElementsByName("byl"); } //Try byl
 		if (arrAuthors.length <= 0) { arrAuthors = document.getElementsByName("byline"); } //Try byline
 		if (arrAuthors.length <= 0) { arrAuthors = document.getElementsByName("DC.creator"); } //Try DC.creator
@@ -184,7 +184,7 @@ function computeCite(strNewName, strNewQuals, strNewDate, strNewTitle, strNewPub
 		strRating = "B-";
 		strBodyText = document.body.innerText; //Get all text on page
 		if (strBodyText.length > 1000) { strBodyText = strBodyText.slice(0, 1000); } //Slice off after 1000 words to avoid false matches
-		n = strBodyText.search(/\bby \b/i);	//Find first occurence of "by "
+		n = strBodyText.search(/\bby \b/i);	//Find first occurrence of "by "
 		if (n > -1) { //If match found
 			strByLine = strBodyText.slice(n); //Slice off everything before "by"
 			if (strByLine.indexOf("\n") != -1) { strByLine = strByLine.slice(0, strByLine.indexOf("\n") + 1); } //Slice end if there's a newline
@@ -290,7 +290,7 @@ function computeCite(strNewName, strNewQuals, strNewDate, strNewTitle, strNewPub
 				ShortYear = Year.toString().substr(2, 2);
 				if (ShortYear.indexOf("0") == 0 && ShortYear != "00") { ShortYear = ShortYear.slice(1); }
 				Month = d.getMonth();
-				Month = Month + 1; //Add 1 becasue getMonth returns 0-11
+				Month = Month + 1; //Add 1 because getMonth returns 0-11
 				Month = Month + ''; //Convert to string
 				if (Month.indexOf("0") == 0) { Month = Month.slice(1); } //Slice leading 0
 				Day = d.getDate();
