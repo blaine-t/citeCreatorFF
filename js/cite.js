@@ -590,14 +590,14 @@ Mousetrap.bind('ctrl+alt+c', function (e) {
 		if (window.getSelection) {
 			var sel = "\n" + window.getSelection().toString();
 			//Send message to the background page with text to copy - tack selection onto cite
-			chrome.runtime.sendMessage({ "text": copyDiv.innerHTML + sel });
+			copy(copyDiv.innerHTML + sel);
 		}
 		else {
-			chrome.runtime.sendMessage({ "text": copyDiv.innerHTML });
+			copy(copyDiv.innerHTML);
 		}
 	}
 	else {
-		chrome.runtime.sendMessage({ "text": copyDiv.innerHTML });
+		copy(copyDiv.innerHTML);
 	}
 
 	return false;
@@ -662,3 +662,16 @@ Mousetrap.bind('ctrl+alt+5', function (e) {
 
 	return false;
 });
+
+// Copy given text to user's clipboard
+function copy(text) {
+	if (text.length > 0) {
+		navigator.clipboard.writeText(text)
+			.then(() => {
+				console.log('Cite copied to clipboard');
+			})
+			.catch((error) => {
+				console.error('Unable to copy cite to clipboard:', error);
+			});
+	}
+}
